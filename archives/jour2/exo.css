@@ -1,0 +1,143 @@
+.Nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.Nav-list {
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.Nav-list--secondary {
+  background: green;
+  color: #fff;
+}
+
+.Nav-link {
+  display: flex;
+  position: relative;
+  padding: 1.5em 0;
+  color: currentColor;
+  align-items: center;
+  text-decoration: none;
+}
+
+.Nav-item {
+  border-bottom: 1px solid currentColor;
+}
+
+.Nav-item:last-child {
+  border: none;
+}
+
+.Nav-item--primary {
+  border-color: #dddddd;
+}
+
+.Nav-icon {
+  display: block;
+  max-width: 30px;
+  margin-right: 10px;
+}
+
+.Nav-link:after {
+  content: "";
+  display: block;
+  background: url(./images/right-thin-chevron.svg) no-repeat;
+  width: 10px;
+  height: 10px;
+  background-size: auto;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.Nav-content {
+  display: block;
+  font-size: 0.65em;
+}
+
+.flex {
+  flex: 0;
+}
+
+.logo {
+  display: none;
+}
+
+/* desktop version */
+@media (min-width: 48em) {
+  body {
+    margin: 30px;
+    border-color: #888;
+    border-width: 0.5;
+    border-style: solid;
+  }
+
+  .logo {
+    background-image: url(./images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 200px;
+    top: 0px;
+  }
+
+  .Nav {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    height: unset;
+  }
+
+  .Nav-list {
+    list-style: none;
+    padding: unset;
+    margin: unset;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  }
+
+  .Nav-link:after {
+    display: none;
+  }
+
+  .Nav-list--primary {
+    font-size: 1.5em;
+  }
+
+  .Nav-item {
+    border-bottom: none;
+  }
+
+  .Nav-list--secondary {
+    padding: 0 10px;
+    margin-bottom: 40px;
+  }
+
+  .Nav-list--secondary .Nav-icon {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Nav-list--secondary .Nav-item:first-of-type .Nav-icon {
+    display: none;
+  }
+
+  .Nav-content {
+    display: none;
+  }
+
+  .flex {
+    flex: 1;
+  }
+}
