@@ -1,0 +1,34 @@
+
+
+.Bref {
+  width: 920px;
+  transform: translateX(50%);
+  &__item {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    @each $color in $colors {
+      &:nth-child(#{length($colors)}n + #{index($colors, $color)}) {
+        color: $color;
+      }
+    }
+  }
+  &__item-amount {
+    font-size: 4rem;
+    word-wrap: break-word;
+    &::after {
+      content: " ";
+    }
+  }
+  &__title {
+    background-image: url("../images/bandeau2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 255px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  @include respond-to("l") {
+    column-count: 2;
+  }
+}

@@ -1,0 +1,52 @@
+.Articles {
+  width: 920px;
+
+  transform: translateX(50%);
+  &__title {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 45px;
+    position: relative;
+    z-index: 1;
+    &--text {
+      background-color: #fff;
+      padding: 1em;
+      font-size: 2.5rem;
+      color: #52525f;
+    }
+    &:before {
+      border-top: 2px solid #dfdfdf;
+      content: "";
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 95%;
+      z-index: -1;
+    }
+  }
+}
+
+.Article {
+  @each $color in $colors {
+    &:nth-child(#{length($colors)}n + #{index($colors, $color)}) {
+      color: $color;
+      background-color: $color;
+    }
+  }
+  &__title {
+    background-image: url("../images/bandeau-responsable.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    height: 255px;
+    text-align: center;
+    vertical-align: text-bottom;
+    &--text {
+      transform: translateY(-50%);
+      color: #fff;
+    }
+  }
+}
